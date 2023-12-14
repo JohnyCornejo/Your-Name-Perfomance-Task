@@ -3,6 +3,9 @@ signal hit
 
 
 @export var speed = 400
+@onready var b_gmusic = $"../BGmusic"
+@onready var enemy_hit = $"../EnemyHit"
+
 
 
 
@@ -38,7 +41,7 @@ func _process(delta):
 func _on_body_entered(body):
 	hide()
 	emit_signal("hit")
-	
+	enemy_hit.play()
 	
 	$CollisionShape2D.set_deferred("disabled", true)
 
