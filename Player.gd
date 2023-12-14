@@ -42,6 +42,7 @@ func _on_body_entered(body):
 	hide()
 	emit_signal("hit")
 	enemy_hit.play()
+	b_gmusic.stop()
 	
 	$CollisionShape2D.set_deferred("disabled", true)
 
